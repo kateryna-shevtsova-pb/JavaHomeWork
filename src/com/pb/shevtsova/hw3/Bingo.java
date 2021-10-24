@@ -17,8 +17,9 @@ public class Bingo {
             if (m==35)
             {System.out.println("Поздравляем! Вы угадали число с " + counter +  " попытки.");
             break;}
-            else {
-                System.out.println("Мы загадали другое число. Вы желаете продолжить? y(yes)/n(no)");
+            else
+            if (m>0 && m<=100)
+            { System.out.println("Мы загадали другое число. Вы желаете продолжить? y(yes)/n(no)");
                 char y = in.next().charAt(0);
                 switch (y) {
                     case 'y': // 'y' - условие для продолжения игры.
@@ -31,6 +32,7 @@ public class Bingo {
                 }
                 break;
             }
+            else {System.out.println("Число должно быть в пределах от 0 до 100"); continue;}
 
         }
         System.out.println("Конец игры.");

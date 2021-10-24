@@ -7,6 +7,7 @@ public class Array {
         int[] array = new int[10];
         int b = 0;
         int a = 0;
+        int  plus_element=0;
         Scanner in = new Scanner(System.in);
 
 
@@ -32,12 +33,13 @@ public class Array {
         b = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] > 0) {
+                plus_element++;
                 a = array[i];
                 b = (a + b);
             }
         }
         System.out.println("Сумма всех положительных элементов массива: " + b);
-
+        System.out.println("Колчисество всех положительных элементов массива: " + plus_element);
 
         // Сортировка пузырьком
         //т.к. каждый раз самы большой элемент переносится вконец строки,

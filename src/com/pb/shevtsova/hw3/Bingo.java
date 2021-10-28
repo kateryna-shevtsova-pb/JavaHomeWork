@@ -4,25 +4,28 @@ import java.util.Scanner;
 
 public class Bingo {
     public static void main(String[] args) {
-        int n=35;
+        int n= (int) (Math.random()*101);
         int counter = 0;
 
         Scanner in = new Scanner(System.in);
 
-        while (counter < 100) {
+        while (counter < 10) {
             counter++;
             System.out.println("Введите число: ");
             int m = Integer.parseInt(in.next());
 
-            if (m==35)
+            if (m==n)
             {System.out.println("Поздравляем! Вы угадали число с " + counter +  " попытки.");
             break;}
             else
             if (m>0 && m<=100)
-            { System.out.println("Мы загадали другое число. Вы желаете продолжить? y(yes)/n(no)");
+            {System.out.println("Мы загадали другое число. Вы желаете продолжить? y(yes)/n(no)");
                 char y = in.next().charAt(0);
                 switch (y) {
-                    case 'y': // 'y' - условие для продолжения игры.
+                    case 'y':
+                        if (m>n) {System.out.println("Попробуйте чуть меньше ;)");}
+                        else {System.out.println("Попробуйте чуть больше ;)");}
+                        // 'y' - условие для продолжения игры.
                         continue;
                     case 'n': // 'n' - условие для завершения игры.
                         break;

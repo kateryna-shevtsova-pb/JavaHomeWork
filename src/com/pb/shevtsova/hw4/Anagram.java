@@ -1,7 +1,7 @@
 package com.pb.shevtsova.hw4;
 
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Anagram {
     public static void main(String[] args) {
@@ -10,8 +10,8 @@ public class Anagram {
         System.out.println("Введите 1-ю строку текста: ");
         String m1 = in.nextLine();
         m1 = (m1.toLowerCase()).trim();
-        m1 = (m1.replace(",",""));
-        m1 = (m1.replace(" ",""));
+        m1 = (m1.replace(",", ""));
+        m1 = (m1.replace(" ", ""));
 
         System.out.println("Введите 2-ю строку текста: ");
         String m2 = in.nextLine();
@@ -19,27 +19,25 @@ public class Anagram {
         m2 = m2.replace(",", "");
         m2 = m2.replace(" ", "");
 
-        if (m1.length() != m2.length())
-        {
-            System.out.print("Это не анаграмма.");
-        }
+        if (m1.length() != m2.length()) {System.out.print("Это не анаграмма.");}
         else {
-            char[] arr1 = m1.toCharArray();
-            char[] arr2 = m2.toCharArray();
-
-            for (int i=0; i<arr1.length; i++) {
-                boolean anagram;
-                for (int j = 0; j < arr2.length; j++)
-                    if (arr1[i] == arr2[j]) {
-                        anagram = true;
-                    } else {
-                        anagram = false;
-                        break;
-                    }
-            }
-
-            System.out.print("Это анаграмма.");
+            String m3 = (String) Sortt(m1);
+            String m4 = (String) Sortt(m2);
+            if (m3.equals(m4))
+            {System.out.print("Это анаграмма.");}
+            else {System.out.print("Это совсем не анаграмма.");}
         }
 
     }
+
+    private static Object Sortt(String m) {
+        char[] arr = m.toCharArray();
+        Arrays.sort(arr);
+        m = new String(arr);
+        System.out.println(m);
+        return m;
+    }
+
 }
+
+

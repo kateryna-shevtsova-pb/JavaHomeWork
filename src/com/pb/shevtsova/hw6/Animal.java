@@ -1,6 +1,5 @@
 package com.pb.shevtsova.hw6;
 
-import com.pb.shevtsova.hw5.Book;
 
 public class Animal {
     private String food;

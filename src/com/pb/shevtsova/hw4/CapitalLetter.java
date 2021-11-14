@@ -12,7 +12,6 @@ public class CapitalLetter {
 
         System.out.println("Введите строку произвольного текста: ");
         String m = in.nextLine();
-
         StringTokenizer st = new StringTokenizer(m);
         while(st.hasMoreTokens()) {
             i++;

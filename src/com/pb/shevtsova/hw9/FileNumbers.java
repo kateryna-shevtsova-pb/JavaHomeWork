@@ -62,10 +62,8 @@ public class FileNumbers {
             System.out.println(line);
             int[] numArr = Arrays.stream(line.split(" ")).mapToInt(Integer::parseInt).toArray();
             for (int i = 0; i < 10; i++) {
-                //System.out.println("для теста"+numArr[i]);
                 if (numArr[i]%2  == 0) {
                     numArr[i] = 0;
-                    //System.out.println("для теста2"+numArr[i]);
                 }
                 writer1.write(numArr[i] + " ");
                 if (i == 9) {

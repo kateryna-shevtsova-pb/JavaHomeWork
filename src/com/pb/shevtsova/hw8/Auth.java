@@ -17,9 +17,9 @@ public class Auth {
 
     public void signUp(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
         Matcher matcherlogin = pattern1.matcher(login);
-        System.out.println(login + " : " + matcherlogin.matches());
+        //System.out.println(login + " : " + matcherlogin.matches());
         Matcher matcherpass = pattern2.matcher(password);
-        System.out.println(password + " : " + matcherpass.matches());
+        //System.out.println(password + " : " + matcherpass.matches());
         if (matcherlogin.matches() == false) {
             throw new WrongLoginException("Данные неверны, проверте пару логин+пароль", login);
         } else {
